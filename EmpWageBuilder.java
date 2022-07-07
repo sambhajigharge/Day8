@@ -17,10 +17,8 @@ public class EmpWageBuilder implements IComputeEmpWage {
         companyToEmpWageMap = new HashMap<>();
     }
 
-    public void addCompanyEmpWage(String company, int empRatePerHour,
-                                  int numOfWorkingDays, int maxHoursPerMonth) {
-        CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour,
-                numOfWorkingDays, maxHoursPerMonth);
+    public void addCompanyEmpWage(String company, int empRatePerHour, int numOfWorkingDays, int maxHoursPerMonth) {
+        CompanyEmpWage companyEmpWage = new CompanyEmpWage(company, empRatePerHour, numOfWorkingDays, maxHoursPerMonth);
         companyEmpWageList.add(companyEmpWage);
         companyToEmpWageMap.put(company, companyEmpWage);
     }
@@ -44,12 +42,9 @@ public class EmpWageBuilder implements IComputeEmpWage {
 
     public static void main(String[] args) {
         IComputeEmpWage empWageBuilder = new EmpWageBuilder();
-        empWageBuilder.addCompanyEmpWage("Dmart", 20,
-                2, 10);
-        empWageBuilder.addCompanyEmpWage("Reliance", 10,
-                4, 20);
+        empWageBuilder.addCompanyEmpWage("Dmart", 20, 2, 10);
+        empWageBuilder.addCompanyEmpWage("Reliance", 10, 4, 20);
         empWageBuilder.computeEmpWage();
-        System.out.println("Total Emp Wage for Dmart Company: " +
-                empWageBuilder.getTotalWage("Dmart"));
+        System.out.println("Total Emp Wage for Dmart Company: " + empWageBuilder.getTotalWage("Dmart"));
     }
 }
